@@ -1,0 +1,3 @@
+contact
+<br>
+{{ $naam }}

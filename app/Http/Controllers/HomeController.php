@@ -21,4 +21,9 @@ class HomeController extends Controller
         $name = User::find($id)->name;
         return view("profile", ["name" => $name]);
     }
+
+    public function contact()
+    {
+        return view("contact", ["naam" => "anilcan"]);
+    }
 }

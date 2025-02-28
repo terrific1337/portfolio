@@ -1,3 +1,5 @@
-hallo!
-<br>
-{{-- {{ $test }} --}}
+@extends('layouts.app')
+
+@section('content')
+example text here!!!!
+@endsection

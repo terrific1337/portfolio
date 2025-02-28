@@ -9,21 +9,13 @@ class HomeController extends Controller
 {
     public function index()
     {
-        if (1) {
-            return view("home", ["test" => "piet"]);
-        } else {
-            return view("home");
-        }
+            return view("home", ["pageTitle" => "Home"]);
     }
 
-    public function profile(int $id)
-    {   
-        $name = User::find($id)->name;
-        return view("profile", ["name" => $name]);
-    }
 
-    public function contact()
-    {
-        return view("contact", ["naam" => "anilcan"]);
-    }
+    // public function profile(int $id)
+    // {   
+    //     $name = User::find($id)->name;
+    //     return view("profile", ["name" => $name]);
+    // }
 }

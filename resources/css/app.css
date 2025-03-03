@@ -17,6 +17,11 @@ Secondary Accent: #FF9800 (Muted Orange for contrast)
 Cards/Containers: #222222 or #252525 (Slightly lighter grey for depth) 
 */
 
+
+    /* ******************************************************************************** */
+    /*                               NAVBAR MENU STYLING                                */
+    /* ******************************************************************************** */
+
 body {
     background-color: #121212;
     color: #EAEAEA;
@@ -60,4 +65,22 @@ nav ul .first {
 nav ul li:last-child {
     position: absolute;
     right: 0;
+}
+
+    /* ******************************************************************************** */
+    /*                                Home page styling                                 */
+    /* ******************************************************************************** */
+
+.HomeWrapper {
+    display:grid;
+    margin:auto;
+    background-color: #FF9800;
+    width: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+.CTA-container {
+    display: flex;
+    list-style: none;
 }

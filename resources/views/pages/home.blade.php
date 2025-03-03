@@ -2,8 +2,12 @@
 
 @section('content')
 <div class="HomeWrapper">
-    <div>
-        welcome on my page
-    </div>
+        <h1>Anilcan Zorlu</h1>
+
+    <ul class="CTA-container"> {{-- call to action buttons --}}
+            <li class="CTA-about-me"><a href="/aboutme">About Me</a></li>
+            <li class="CTA-view-projects"><a href="/projects">View Projects</a></li>
+            <li class="CTA-contact-me"><a href="/contact">Contact Me</a></li>
+    </ul>
 </div>
 @endsection

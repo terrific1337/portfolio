@@ -22,40 +22,42 @@ body {
     color: #EAEAEA;
 }
 
-nav ul {
-    display: flex;  /* Makes the list items align in a row */
-    justify-content: center;
-    list-style: none; /* Removes bullet points */
-    padding: 0; /* Removes default padding */
-    margin: 0; /* Removes default margin */
-    font-size: 48px;
-}
-
-nav ul li:last-child {
-    margin-left: auto;
-    margin-right: 0;
-}
-
-nav ul li {
-    margin-right: 20px; /* Adds spacing between items */
-}
-
-nav ul li:last-child {
-    margin-right: 0; /* Removes extra spacing after the last item */
-}
-  
 nav ul li:hover {
     color: #0074E4;
 }
 
 nav {
+    display: flex;
+    justify-content: center; /* Center the main menu */
+    align-items: center;
     border-bottom: 2px solid #0074E4;
+    position: relative;
+    width: 100%;
 }
 
 .active {
     color: #0074E4;
 }
 
-.home-wrapper {
-    background-color: #0074E4;
+nav ul {
+    display: flex;
+    list-style: none;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    position: relative;
+}
+
+/* First item (left side) */
+nav ul .first {
+    position: absolute;
+    left: 0;
+}
+
+/* Last item (right side) */
+nav ul li:last-child {
+    position: absolute;
+    right: 0;
 }

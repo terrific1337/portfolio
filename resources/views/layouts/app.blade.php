@@ -3,6 +3,7 @@
 <head>
     @include('layouts.partials.html-head')
     <title>@yield('title')</title>
+    @vite(['resources/css/app.css'])
 </head>
 <body>
 
@@ -11,7 +12,6 @@
 
     <div class="main-wrapper">
         @yield('content') 
-        test
     </div>
 
 </body>

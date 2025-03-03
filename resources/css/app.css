@@ -10,3 +10,52 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* 
+Primary Accent:   #0074E4 (Tech Blue) or #4CAF50 (Elegant Green)
+Secondary Accent: #FF9800 (Muted Orange for contrast)
+Cards/Containers: #222222 or #252525 (Slightly lighter grey for depth) 
+*/
+
+body {
+    background-color: #121212;
+    color: #EAEAEA;
+}
+
+nav ul {
+    display: flex;  /* Makes the list items align in a row */
+    justify-content: center;
+    list-style: none; /* Removes bullet points */
+    padding: 0; /* Removes default padding */
+    margin: 0; /* Removes default margin */
+    font-size: 48px;
+}
+
+nav ul li:last-child {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+nav ul li {
+    margin-right: 20px; /* Adds spacing between items */
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Removes extra spacing after the last item */
+}
+  
+nav ul li:hover {
+    color: #0074E4;
+}
+
+nav {
+    border-bottom: 2px solid #0074E4;
+}
+
+.active {
+    color: #0074E4;
+}
+
+.home-wrapper {
+    background-color: #0074E4;
+}

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-example text here!!!!
+<div class="HomeWrapper">
+    <div>
+        welcome on my page
+    </div>
+</div>
 @endsection

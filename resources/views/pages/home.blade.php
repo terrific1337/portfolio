@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="HomeWrapper">
-        <h1>Anilcan Zorlu</h1>
+        <h1>Welcome on my portfolio.</h1>
 
     <ul class="CTA-container"> {{-- call to action buttons --}}
             <li class="CTA-about-me"><a href="/aboutme">About Me</a></li>

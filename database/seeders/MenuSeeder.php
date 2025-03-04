@@ -14,7 +14,7 @@ class MenuSeeder extends Seeder
     {
         DB::table('menu')->insert([
             ['id' => 1, 'name' => 'Home', 'level' => 0],
-            ['id' => 2, 'name' => 'AboutMe', 'level' => 0],
+            ['id' => 2, 'name' => 'About Me', 'level' => 0],
             ['id' => 3, 'name' => 'Projects', 'level' => 0],
             ['id' => 4, 'name' => 'Skills', 'level' => 0],
             ['id' => 5, 'name' => 'Jobs', 'level' => 0],

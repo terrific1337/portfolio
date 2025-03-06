@@ -3,7 +3,7 @@
 @section('content')
 <div class="aboutme-container">
     <div class="aboutme-item">
-        <img src="" alt="selfie">
+        <img src="{{ asset('images/person_icon.png') }}" alt="me">
         <p>
             Hey, I'm Anilcan Zorlu, a passionate software developer with a focus on Laravel, PHP, and backend development. 
             I love turning ideas into functional, scalable web applications. I'm always learning and improving, whether it's by optimizing database queries or exploring new tech stacks. 
@@ -12,7 +12,7 @@
     </div>
 
     <div class="aboutme-item">
-        <img src="" alt="background">
+        <img src="{{ asset('images/background.png') }}" alt="background">
         <p>
             My journey into programming started with my first year as a software developer student at the Veghel MBO School KW1C, 
             where I was introduced to the basics of programming. During my studies, I primarily worked with HTML, CSS, PHP & MySQL. 
@@ -21,7 +21,7 @@
     </div>
 
     <div class="aboutme-item">
-        <img src="" alt="atm">
+        <img src="{{ asset('images/atm.png') }}" alt="atm">
         <p>
             At the moment, I'm working on this portfolio to practice my skills with Laravel. 
             I'm also doing an internship at Dispi / E-captain, where I am developing my portfolio and getting mentorship to improve my Laravel skills.
@@ -29,7 +29,7 @@
     </div>
 
     <div class="aboutme-item">
-        <img src="" alt="hobby">
+        <img src="{{ asset('images/hobbies.png') }}" alt="hobby">
         <p>
             In my free time, I enjoy playing League of Legends, which has been my competitive outlet for over 10 years. 
             I consistently rank in the top 1%. I also love experimenting with new projects, like this portfolio, and always look for ways to learn and improve. 

@@ -40,18 +40,38 @@ nav:hover {
     background-color: rgba(0, 116, 228, 0.08);
 }
 
+/* Main navbar container */
 nav ul {
     display: flex;
-    list-style: none;
-    font-size: 30px;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
     width: 100%;
-    position: relative;
+    font-size: 30px;
+    padding: 0;
 }
 
-/* Navbar Hover and Active State */
+/* First item (name/logo) stays on the left */
+nav ul .first {
+    position: absolute;
+    left: 10px;
+}
+
+/* Centered menu items */
+.menu-center {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Right-aligned menu items */
+.menu-right {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    right: 10px;
+}
+
+/* Navbar hover and active state */
 nav ul li:hover,
 .active {
     color: #0074E4;
@@ -62,16 +82,6 @@ nav ul li:hover,
     text-decoration: underline;
 }
 
-/* First and Last item positioning */
-nav ul .first {
-    position: absolute;
-    left: 10px;
-}
-
-nav ul li:last-child {
-    position: absolute;
-    right: 10px;
-}
 
 /* ******************************************************************************** */
 /*                               HOME PAGE STYLING                                  */

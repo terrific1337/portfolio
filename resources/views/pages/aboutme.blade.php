@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="aboutme-container">
+    <h1>Introduction:</h1>
     <div class="aboutme-item">
         <img src="{{ asset('images/person_icon.png') }}" alt="me">
         <p>
@@ -11,6 +12,7 @@
         </p>
     </div>
 
+    <h1>Background:</h1>
     <div class="aboutme-item">
         <img src="{{ asset('images/background.png') }}" alt="background">
         <p>
@@ -20,6 +22,7 @@
         </p>
     </div>
 
+    <h1>What I'm working on right now:</h1>
     <div class="aboutme-item">
         <img src="{{ asset('images/atm.png') }}" alt="atm">
         <p>
@@ -28,6 +31,7 @@
         </p>
     </div>
 
+    <h1>Hobbies & Interests:</h1>
     <div class="aboutme-item">
         <img src="{{ asset('images/hobbies.png') }}" alt="hobby">
         <p>

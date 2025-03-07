@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.partials.header')
 <div class="aboutme-container">
     <h1>Introduction:</h1>
     <div class="aboutme-item">

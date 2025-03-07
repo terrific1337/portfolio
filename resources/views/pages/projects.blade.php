@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-projects
+@include('layouts.partials.header')
+
 @endsection

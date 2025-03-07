@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-jobs
+@include('layouts.partials.header')
+    <div class="jobs-container">
+        <div class="jobs-item">
+            
+        </div>
+        
+    </div>
 @endsection

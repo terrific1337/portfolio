@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.partials.header')
 <div class="contact-container">
-    <h1 class="contact-me-text">Contact Me</h1>
+    <h1 class="contact-me-text">My Contact Info</h1>
 
     <div class="contact-info">
         <p>📞 Telefoon: +31 6 14 37 61 24</p>
@@ -16,7 +17,7 @@
                 {{ session('success') }}
             </div>
         @endif
-
+        <h1 class="contact-message-me">Message Me</h1>
         <form action="{{ route('contact.submit') }}" method="POST">
             @csrf
             <div class="input-group">

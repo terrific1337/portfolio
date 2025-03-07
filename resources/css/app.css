@@ -91,7 +91,7 @@ nav ul li:hover,
 
 .active {
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: underline #6A0DAD;
 }
 
 

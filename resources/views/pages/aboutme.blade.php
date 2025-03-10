@@ -3,46 +3,47 @@
 @section('content')
 @include('layouts.partials.header')
 <div class="aboutme-container">
-    <h1>Introduction:</h1>
+    <h1>Introduction</h1>
     <div class="aboutme-item">
         <img src="{{ asset('images/person_icon.png') }}" alt="me">
         <p>
-            Hey, I'm Anilcan Zorlu, a passionate software developer with a focus on Laravel, PHP, and backend development. 
-            I love turning ideas into functional, scalable web applications. I'm always learning and improving, whether it's by optimizing database queries or exploring new tech stacks. 
-            Outside of coding, you might find me playing League of Legends or experimenting with new projects.
+            Hi! I’m <strong>Anilcan Zorlu</strong>, a passionate backend developer with a strong focus on Laravel and PHP. 
+            I love building clean, scalable web applications that solve real problems. 
+            My goal is to grow as a developer while contributing to meaningful projects — whether personal, freelance, or team-based.
         </p>
     </div>
 
-    <h1>Background:</h1>
+    <h1>My Journey</h1>
     <div class="aboutme-item">
         <img src="{{ asset('images/background.png') }}" alt="background">
         <p>
-            My journey into programming started with my first year as a software developer student at the Veghel MBO School KW1C, 
-            where I was introduced to the basics of programming. During my studies, I primarily worked with HTML, CSS, PHP & MySQL. 
-            With my last internship, I picked up the Laravel Framework together with Vue. The portfolio you're viewing was created with Laravel & Vue as practice.
+            I started my programming journey at <strong>KW1C, Veghel</strong>, where I was introduced to HTML, CSS, PHP, and MySQL. 
+            Through my internships and self-driven projects, I discovered my passion for backend development.
+            During my latest internship, I picked up the Laravel framework and Vue.js — and this portfolio is a hands-on result of that growth.
         </p>
     </div>
 
-    <h1>What I'm working on right now:</h1>
+    <h1>What I'm Working On</h1>
     <div class="aboutme-item">
         <img src="{{ asset('images/atm.png') }}" alt="atm">
         <p>
-            At the moment, I'm working on this portfolio to practice my skills with Laravel. 
-            I'm also doing an internship at Dispi / E-captain, where I am developing my portfolio and getting mentorship to improve my Laravel skills.
+            Currently, I’m continuing to improve my Laravel skills while working on this portfolio and gaining real-world experience during my internship at <strong>Dispi / E-captain</strong>. 
+            I’m focused on writing clean code, and learning from mentorship.
         </p>
     </div>
 
-    <h1>Hobbies & Interests:</h1>
+    <h1>Beyond Coding</h1>
     <div class="aboutme-item">
         <img src="{{ asset('images/hobbies.png') }}" alt="hobby">
         <p>
-            In my free time, I enjoy playing League of Legends, which has been my competitive outlet for over 10 years. 
-            I consistently rank in the top 1%. I also love experimenting with new projects, like this portfolio, and always look for ways to learn and improve. 
-            Outside of gaming, I lift weights, watch anime, and read manga. Plus, I'm a proud owner of a Shiba Inu.
+            Outside of coding, I’m a competitive <strong>League of Legends</strong> player, consistently ranking in the top 1%. 
+            I also enjoy building passion projects, lifting weights, watching anime, and reading manga. 
+            And yes — I’m a proud Shiba Inu owner.
         </p>
     </div>
 
     <div class="aboutme-item aboutme-links">
+        <h2>Let's Connect</h2>
         <p>📧 Email: <a href="mailto:AnilcZorlu@gmail.com">AnilcZorlu@gmail.com</a></p>
         <p>🔗 <a href="https://www.linkedin.com/in/anilcanzorlu/" target="_blank">LinkedIn</a></p>
         <p>💻 <a href="https://github.com/terrific1337?tab=repositories" target="_blank">GitHub</a></p>

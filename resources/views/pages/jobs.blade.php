@@ -15,7 +15,7 @@
             <a href="{{ route('jobs.show', $job->id) }}" class="job-card">
                 <h2>{{ $job->companyname }}</h2>
                 <img src="{{ asset($job->companylogo) }}" alt="{{ $job->companyname }} Logo">
-                <p>{{ $job->startdate }}</p>
+                <p>{{ \Carbon\Carbon::parse($job->startdate)->format('F Y') }}</p>
             </a>
         @endforeach
     @else

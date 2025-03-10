@@ -10,12 +10,14 @@ class JobController extends Controller
     public function index()
     {
     $jobs = Jobs::all();
-    return view('jobs.index', compact('jobs'));
+    $pageTitle = 'Jobs';
+    return view('pages.jobs', compact('jobs', 'pageTitle'));
     }
 
     public function show($id)
     {
         $job = Jobs::findOrFail($id); // Get job by ID, or return 404 if not found
-        return view('pages.jobs-show', compact('job'));
+        $pageTitle = $job->companyname;
+        return view('pages.jobs-show', compact('job', 'pageTitle'));
     }
 }

@@ -23,6 +23,10 @@ return new class extends Migration
             $table->boolean('intern')->default(false); // Is it an internship?
             $table->string('contactperson')->nullable(); // Contact person
             $table->timestamps(); // created_at and updated_at
+            $table->text('jobdescription')->nullable(); // Job description
+            $table->string('companysector')->nullable(); // Company sector
+            $table->string('companywebsite')->nullable(); // Company website
+            $table->string('companylogo')->nullable(); // Company logo path
         });
     }
 

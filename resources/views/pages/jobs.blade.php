@@ -1,24 +1,26 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.partials.header')
 
-    @php
-        use App\Models\Jobs;
-        $jobs = Jobs::all(); // Fetch all jobs
-    @endphp
-    <h1>Companies</h1>
+@php
+    use App\Models\Jobs;
+    // Order jobs by startdate descending (newest first)
+    $jobs = Jobs::orderBy('startdate', 'desc')->get();
+@endphp
 
+<div class="jobs-container">
     @if($jobs->count())
-        <ul>
-            @foreach($jobs as $job)
-                <li>
-                    <a href="{{ route('jobs.show', $job->id) }}">
-                        {{ $job->companyname }}
-                    </a>
-                </li>
-            @endforeach
-        </ul>
+        @foreach($jobs as $job)
+            <a href="{{ route('jobs.show', $job->id) }}" class="job-card">
+                <h2>{{ $job->companyname }}</h2>
+                <img src="{{ asset($job->companylogo) }}" alt="{{ $job->companyname }} Logo">
+                <p>{{ $job->startdate }}</p>
+            </a>
+        @endforeach
     @else
-        <p>No companies available.</p>
+        <p class="no-jobs">No companies available.</p>
     @endif
+</div>
+
 @endsection

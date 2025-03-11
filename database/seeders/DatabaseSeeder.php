@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             JobsSeeder::class,
             MenuSeeder::class,
+            ProjectsSeeder::class,
         ]);
     }
 }

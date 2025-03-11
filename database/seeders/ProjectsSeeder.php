@@ -13,6 +13,40 @@ class ProjectsSeeder extends Seeder
      */
     public function run(): void
     {
+        // Seed Tags
+        DB::table('tags')->insert([
+            ['name' => 'Laravel'],
+            ['name' => 'PHP'],
+            ['name' => 'HTML'],
+            ['name' => 'CSS'],
+            ['name' => 'Javascript'],
+            ['name' => 'MySQL'],
+            ['name' => 'Vue.js'],
+            ['name' => 'Bootstrap'],
+            ['name' => 'Web Development'],
+            ['name' => 'Mobile Development'],
+            ['name' => 'Desktop Development'],
+            ['name' => 'Game Development'],
+            ['name' => 'Responsive'],
+            ['name' => 'Power BI'],
+            ['name' => 'Authentication'],
+            ['name' => 'Authorization'],
+            ['name' => 'API'],
+            ['name' => 'CRUD'],
+            ['name' => 'Unity'],
+            ['name' => 'Unreal Engine'],
+            ['name' => 'Blender'],
+            ['name' => 'Dashboard'],
+            ['name' => 'Fullstack'],
+            ['name' => 'Frontend'],
+            ['name' => 'Backend'],
+            ['name' => 'E-commerce'],
+            ['name' => 'Data Visualization'],
+            ['name' => 'Charts'],
+            ['name' => 'SaaS'],
+        ]);
+
+        // Seed Projects
         DB::table('projects')->insert([
             [
                 'name' => 'Volleybal Tournament App',
@@ -23,7 +57,7 @@ class ProjectsSeeder extends Seeder
                 'status' => 'completed',
                 'category' => 'school',
                 'featured' => false,
-                'order' => 6,
+                'order' => 7,
             ],
             [
                 'name' => 'RijschoolApp',
@@ -67,7 +101,7 @@ class ProjectsSeeder extends Seeder
                 'status' => 'completed',
                 'category' => 'school',
                 'featured' => false,
-                'order' => 5,
+                'order' => 6,
             ],
             [
                 'name' => 'test',
@@ -79,7 +113,82 @@ class ProjectsSeeder extends Seeder
                 'category' => 'work',
                 'featured' => false,
                 'order' => 1,
-            ]
+            ],
+            [
+                'name' => 'Fieldproject Staad',
+                'description' => 'In this field project, I collaborated with a team of skilled individuals proficient in Power BI. Our task was to integrate data from Staad into Power BI, leveraging our diverse backgrounds to achieve this goal.',
+                'repo' => '',
+                'screenshot' => 'storage/images/staad_screenshot.png',
+                'demo' => '',
+                'status' => 'completed',
+                'category' => 'work',
+                'featured' => false,
+                'order' => 5,
+            ],
+        ]);
+        
+        // Seed Pivot Table (project_tag)
+        DB::table('project_tag')->insert([
+            // Volleybal Tournament App
+            ['project_id' => 1, 'tag_id' => 2], // PHP
+            ['project_id' => 1, 'tag_id' => 3], // HTML
+            ['project_id' => 1, 'tag_id' => 4], // CSS
+            ['project_id' => 1, 'tag_id' => 6], // MySQL
+            ['project_id' => 1, 'tag_id' => 9], // Web Development
+            ['project_id' => 1, 'tag_id' => 18], // CRUD 
+
+            // RijschoolApp
+            ['project_id' => 2, 'tag_id' => 2], // PHP 
+            ['project_id' => 2, 'tag_id' => 3], // HTML
+            ['project_id' => 2, 'tag_id' => 4], // CSS
+            ['project_id' => 2, 'tag_id' => 6], // MySQL
+            ['project_id' => 2, 'tag_id' => 9], // Web Development
+            ['project_id' => 2, 'tag_id' => 15], // Authentication
+            ['project_id' => 2, 'tag_id' => 18], // CRUD
+            ['project_id' => 2, 'tag_id' => 23], // Fullstack
+            ['project_id' => 2, 'tag_id' => 22], // Dashboard
+
+            // Sail Away
+            ['project_id' => 3, 'tag_id' => 2], // PHP
+            ['project_id' => 3, 'tag_id' => 3], // HTML
+            ['project_id' => 3, 'tag_id' => 4], // CSS
+            ['project_id' => 3, 'tag_id' => 5], // Javascript
+            ['project_id' => 3, 'tag_id' => 6], // MySQL
+            ['project_id' => 3, 'tag_id' => 9], // Web Development
+            ['project_id' => 3, 'tag_id' => 15], // Authentication
+            ['project_id' => 3, 'tag_id' => 18], // CRUD
+            ['project_id' => 3, 'tag_id' => 23], // Fullstack
+
+            // Portfolio
+            ['project_id' => 4, 'tag_id' => 1], // Laravel
+            ['project_id' => 4, 'tag_id' => 2], // PHP
+            ['project_id' => 4, 'tag_id' => 3], // HTML
+            ['project_id' => 4, 'tag_id' => 4], // CSS
+            ['project_id' => 4, 'tag_id' => 6], // MySQL
+            ['project_id' => 4, 'tag_id' => 7], // Vue.js
+            ['project_id' => 4, 'tag_id' => 9], // Web Development
+            ['project_id' => 4, 'tag_id' => 23], // Fullstack
+
+            // Campus
+            ['project_id' => 5, 'tag_id' => 2], // PHP
+            ['project_id' => 5, 'tag_id' => 3], // HTML
+            ['project_id' => 5, 'tag_id' => 4], // CSS
+            ['project_id' => 5, 'tag_id' => 6], // MySQL
+            ['project_id' => 5, 'tag_id' => 9], // Web Development
+            ['project_id' => 5, 'tag_id' => 15], // Authentication
+            ['project_id' => 5, 'tag_id' => 18], // CRUD
+            ['project_id' => 5, 'tag_id' => 22], // Dashboard
+            ['project_id' => 5, 'tag_id' => 23], // Fullstack
+            
+            // test
+            //['project_id' => 6, 'tag_id' => 1], Laravel
+
+            // Fieldproject Staad
+            ['project_id' => 7, 'tag_id' => 24], // Dashboard
+            ['project_id' => 7, 'tag_id' => 26], // Data Visualization
+            ['project_id' => 7, 'tag_id' => 14], // Power BI
+            ['project_id' => 7, 'tag_id' => 22], // Dashboard
+            ['project_id' => 7, 'tag_id' => 28], // Charts
         ]);
     }
 }

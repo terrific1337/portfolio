@@ -12,9 +12,9 @@
             @foreach($menus as $menu)
                 @if($menu->id <= $thresholdId)
                     <li>
-                        <a href="{{ url($menu->name) }}" class="{{ request()->is($menu->name) ? 'active' : '' }}">
+                        <a href="{{ url(strtolower($menu->name)) }}" class="{{ request()->is(strtolower($menu->name)) ? 'active' : '' }}">
                             {{ $menu->name }}
-                        </a>
+                        </a>                        
                     </li>
                 @endif
             @endforeach
@@ -24,7 +24,7 @@
             @foreach($menus as $menu)
                 @if($menu->id > $thresholdId)
                     <li>
-                        <a href="{{ url($menu->name) }}" class="{{ request()->is($menu->name) ? 'active' : '' }}">
+                        <a href="{{ url(strtolower($menu->name)) }}" class="{{ request()->is(strtolower($menu->name)) ? 'active' : '' }}">
                             {{ $menu->name }}
                         </a>
                     </li>

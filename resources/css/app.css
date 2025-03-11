@@ -616,7 +616,7 @@ nav ul li:hover,
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 2rem;
     padding: 2rem;
     margin: 0 15rem; /* ← this adds space left/right */
@@ -647,7 +647,7 @@ nav ul li:hover,
 .project-thumb {
     width: 100%;
     height: 180px;
-    object-fit: cover;
+    object-fit:fill;
     border-radius: 0.75rem;
     margin-bottom: 1rem;
 }
@@ -655,7 +655,9 @@ nav ul li:hover,
 .project-card h2 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-    color: #EAEAEA;
+    color: #f9fafb;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
 }
 
 .project-card p {
@@ -673,8 +675,8 @@ nav ul li:hover,
 }
 
 .project-tags span {
-    background-color: #333;
-    color: #EAEAEA;
+    background-color: #374151;
+    color: #f3f4f6;
     font-size: 0.75rem;
     padding: 0.3rem 0.75rem;
     border-radius: 999px;
@@ -732,32 +734,32 @@ nav ul li:hover,
 
 /* === Category Colors === */
 .project-category.personal {
-    background-color: #e0f2fe;
+    background-color: #fbcfe8;
     color: #0369a1;
 }
 
 .project-category.school {
-    background-color: #fef9c3;
+    background-color: #c4b5fd;
     color: #854d0e;
 }
 
 .project-category.work {
-    background-color: #fce7f3;
+    background-color: #fca5a5;
     color: #9d174d;
 }
 
 /* === Status Colors === */
 .project-status.completed {
-    background-color: #d1fae5;
+    background-color: #86efac;
     color: #065f46;
 }
 
 .project-status.in-progress {
-    background-color: #fef3c7;
+    background-color: #fde68a;
     color: #92400e;
 }
 
 .project-status.planned {
-    background-color: #e0e7ff;
+    background-color: #93c5fd;
     color: #1e3a8a;
 }

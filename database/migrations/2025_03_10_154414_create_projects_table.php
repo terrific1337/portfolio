@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('repo')->nullable();
             $table->string('screenshot')->nullable();
             $table->string('demo')->nullable();
-            $table->enum('status', ['in progress','completed','planned']);
+            $table->enum('status', ['in-progress','completed','planned']);
             $table->enum('category', ['personal','school','work']);
             $table->boolean('featured')->default(false);
             $table->integer('order')->nullable();

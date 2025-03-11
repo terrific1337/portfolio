@@ -9,6 +9,8 @@
     $jobs = Jobs::orderBy('startdate', 'desc')->get();
 @endphp
 
+<p class="section-subtitle">Here are some of the job experiences.</p>
+
 <div class="jobs-container">
     @if($jobs->count())
         @foreach($jobs as $job)

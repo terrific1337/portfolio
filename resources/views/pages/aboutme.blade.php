@@ -2,6 +2,7 @@
 
 @section('content')
 @include('layouts.partials.header')
+<p class="section-subtitle">A brief overview of my background and interests.</p>
 <div class="aboutme-container">
     <h1>Introduction</h1>
     <div class="aboutme-item">

@@ -1,6 +1,9 @@
 @extends('layouts.app')
 @section('content')
 @include('layouts.partials.header')
+
+<p class="section-subtitle">Here are some of the skills I've acquired and honed over time.</p>
+
 <div class ="skills-container">
 
     <div class="skills-section">

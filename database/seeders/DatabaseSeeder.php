@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             JobsSeeder::class,
             MenuSeeder::class,
             ProjectsSeeder::class,
+            UserSeeder::class,
         ]);
     }
 }

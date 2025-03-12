@@ -1,6 +1,15 @@
 @php
     use App\Models\Menu;
-    $menus = Menu::where('level', 0)->get();
+    use Illuminate\Support\Facades\Auth;
+
+    // Determine which menus to show
+    if (Auth::check()) {
+        $userLevel = Auth::user()->level;
+        $menus = Menu::whereIn('level', [0, ($userLevel === 5 ? 5 : null)])->get();
+    } else {
+        $menus = Menu::where('level', 0)->get();
+    }
+
     $thresholdId = 10;
 @endphp
 
@@ -30,6 +39,21 @@
                     </li>
                 @endif
             @endforeach
+
+            @if (Auth::check())
+                <li>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="logout-button">Logout</button>
+                    </form>
+                </li>
+            @else
+                <li>
+                    <a href="{{ route('login') }}" class="{{ request()->routeIs('login') ? 'active' : '' }}">
+                        Login
+                    </a>
+                </li>
+            @endif
         </div>
     </ul>
 </nav>

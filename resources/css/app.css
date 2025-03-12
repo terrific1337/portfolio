@@ -215,6 +215,16 @@ nav ul li:hover,
     text-decoration: underline #6A0DAD;
 }
 
+.logout-button {
+    color: #EAEAEA;
+    all: unset;
+    cursor: pointer;
+}
+
+.logout-button:hover {
+    text-decoration: underline;
+}
+
 
 /* ******************************************************************************** */
 /*                               HOME PAGE STYLING                                  */

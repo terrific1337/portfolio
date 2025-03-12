@@ -26,8 +26,8 @@
                 </div>
 
                 <div class="project-links">
-                    <a href="{{ $project->demo }}" class="btn">Live Demo</a>
-                    <a href="{{ $project->repo }}" class="btn">View Code</a>
+                    <a href="{{ $project->demo }}" class="btn" target="_blank">Live Demo</a>
+                    <a href="{{ $project->repo }}" class="btn" target="_blank">View Code</a>
                 </div>
             </div>
         @endforeach

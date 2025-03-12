@@ -9,7 +9,7 @@
     $jobs = Jobs::orderBy('startdate', 'desc')->get();
 @endphp
 
-<p class="section-subtitle">Here are some of the job experiences.</p>
+<p class="section-subtitle">Here are some of my job experiences.</p>
 
 <div class="jobs-container">
     @if($jobs->count())

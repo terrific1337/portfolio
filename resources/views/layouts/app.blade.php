@@ -7,7 +7,6 @@
 </head>
 <body>
 
-    {{-- @include('layouts.partials.menu-sidebar') --}}
     @include('layouts.partials.menu-topnav')
 
     <div class="main-wrapper">

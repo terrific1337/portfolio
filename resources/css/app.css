@@ -71,7 +71,6 @@ body {
     height: 15px;
     width: 100%;
     background-color: #0074E4; /* Primary Accent Blue */
-    margin-top: 80px;
     border-top: solid 2px #6A0DAD;
 }
 
@@ -922,4 +921,109 @@ h2 {
 .project-status.planned {
     background-color: #93c5fd;
     color: #1e3a8a;
+}
+
+/* ******************************************************************************** */
+/*                             SIDEBAR PAGE STYLING                                 */
+/* ******************************************************************************** */
+
+.dashboard-flex {
+    display: flex;
+    min-height: 100vh;
+    background-color: #121212;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 240px;
+    background-color: #222222; /* Card Background */
+    color: #EAEAEA;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid #6A0DAD; /* Secondary Accent */
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0074E4; /* Primary Accent */
+    margin: 0;
+    border-bottom: 2px solid #6A0DAD; /* Divider */
+    padding-bottom: 10px;
+}
+
+/* Sidebar Menu Items */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    margin-bottom: 12px;
+}
+
+.sidebar-menu a {
+    color: #EAEAEA;
+    text-decoration: none;
+    font-size: 15px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 6px;
+    background-color: transparent;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a:focus {
+    background-color: #0074E4;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.sidebar-menu a.active {
+    background-color: #0074E4;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+/* ******************************************************************************** */
+/*                            DASHBOARD CONTENT STYLING                             */
+/* ******************************************************************************** */
+
+.dashboard-content {
+    flex: 1;
+    padding: 40px;
+    background-color: #121212; /* Match Body BG */
+    color: #EAEAEA;
+}
+
+.dashboard-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0074E4; /* Primary Accent */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #6A0DAD;
+    padding-bottom: 10px;
+}
+
+.dashboard-greeting {
+    font-size: 20px;
+    font-weight: 500;
+    color: #EAEAEA;
+    margin-bottom: 10px;
+}
+
+.dashboard-description {
+    font-size: 16px;
+    color: #B0B0B0; /* Slight contrast for subtler paragraph */
+    line-height: 1.6;
 }

@@ -6,6 +6,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\SkillController;
+use App\Http\Controllers\Auth\AboutMeController;
+use App\Http\Controllers\Auth\UserController;
 
 // Public routes
 Route::get('/', [PageController::class, 'show'])->defaults('page', 'home');
@@ -22,7 +25,11 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');
     Route::get('/projects/create', [ProjectController::class, 'create'])->name('dashboard.projects.create');
-    Route::post('/projects', [ProjectController::class, 'store'])->name('dashboard.projects.store');
+    // Route::post('/projects', [ProjectController::class, 'store'])->name('dashboard.projects.store');
+    Route::post('/jobs', [JobController::class, 'dashboardIndex'])->name('dashboard.jobs');
+    Route::post('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
+    Route::post('/aboutme', [AboutMeController::class, 'dashboardIndex'])->name('dashboard.aboutme');
+    Route::post('/users', [UserController::class, 'dashboardIndex'])->name('dashboard.users');
 });
 
 // Auth routes

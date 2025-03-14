@@ -26,30 +26,4 @@ class ProjectController extends Controller
             'pageTitle' => 'Manage Projects'
         ]);
     }
-
-    public function create()
-    {
-        // Show create form in dashboard
-        return view('dashboard.projects.create', [
-            'pageTitle' => 'Add Project'
-        ]);
-    }
-
-    public function store(Request $request)
-    {
-        // Handle form submission to create project
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'tags' => 'nullable|string',
-        ]);
-
-        Project::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'tags' => $request->tags,
-        ]);
-
-        return redirect()->route('dashboard.projects')->with('success', 'Project created successfully!');
-    }
 }

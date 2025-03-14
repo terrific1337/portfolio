@@ -24,12 +24,12 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     })->name('dashboard');
 
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');
-    Route::get('/projects/create', [ProjectController::class, 'create'])->name('dashboard.projects.create');
+    // Route::get('/projects/create', [ProjectController::class, 'create'])->name('dashboard.projects.create');
     // Route::post('/projects', [ProjectController::class, 'store'])->name('dashboard.projects.store');
-    Route::post('/jobs', [JobController::class, 'dashboardIndex'])->name('dashboard.jobs');
-    Route::post('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
-    Route::post('/aboutme', [AboutMeController::class, 'dashboardIndex'])->name('dashboard.aboutme');
-    Route::post('/users', [UserController::class, 'dashboardIndex'])->name('dashboard.users');
+    Route::get('/jobs', [JobController::class, 'dashboardIndex'])->name('dashboard.jobs');
+    Route::get('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
+    Route::get('/aboutme', [AboutMeController::class, 'dashboardIndex'])->name('dashboard.aboutme');
+    Route::get('/users', [UserController::class, 'dashboardIndex'])->name('dashboard.users');
 });
 
 // Auth routes

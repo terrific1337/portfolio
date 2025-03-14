@@ -20,4 +20,15 @@ class JobController extends Controller
         $pageTitle = $job->companyname;
         return view('pages.jobs-show', compact('job', 'pageTitle'));
     }
+
+    public function dashboardIndex()
+    {
+        // Admin dashboard project list
+        $jobs = Jobs::all();
+
+        return view('dashboard.jobs.index', [
+            'jobs' => $jobs,
+            'pageTitle' => 'Manage Jobs'
+        ]);
+    }
 }

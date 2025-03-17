@@ -13,4 +13,14 @@ class AboutMeController extends Controller
         $pageTitle = "About Me";
         return view('pages.aboutme', compact('aboutmes', 'pageTitle'));
     }
+
+    public function dashboardIndex()
+    {
+        $aboutmes = AboutMe::all();
+
+        return view('dashboard.about me.index', [
+            'aboutmes' => $aboutmes,
+            'pageTitle' => 'Manage Jobs'
+        ]);
+    }
 }

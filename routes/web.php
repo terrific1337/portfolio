@@ -35,7 +35,14 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/jobs', [JobController::class, 'dashboardIndex'])->name('dashboard.jobs');
     Route::get('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
     Route::get('/aboutme', [AboutMeController::class, 'dashboardIndex'])->name('dashboard.aboutme');
+
+    // Manage Users
     Route::get('/users', [UserController::class, 'dashboardIndex'])->name('dashboard.users');
+    Route::get('/users/create', [UserController::class, 'create'])->name('dashboard.users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('dashboard.users.store');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('dashboard.users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('dashboard.users.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('dashboard.users.destroy');
 });
 
 // Auth routes

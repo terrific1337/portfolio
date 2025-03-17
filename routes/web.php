@@ -18,7 +18,7 @@ Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
 Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
-Route::get('/aboutme', [AboutMeController::class, 'index'])->name('aboutme.index');
+Route::get('/about me', [AboutMeController::class, 'index'])->name('aboutme.index');
 
 // Dashboard routes (auth required)
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {

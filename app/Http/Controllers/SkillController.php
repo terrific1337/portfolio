@@ -9,10 +9,11 @@ class SkillController extends Controller
 {
     public function index()
     {
-    $skills = Skill::all();
-    $pageTitle = 'Skills';
-    return view('pages.skills', compact('skills', 'pageTitle'));
+        $categories = \App\Models\Category::with('skill')->get();
+        $pageTitle = 'Skills';
+        return view('pages.skills', compact('categories', 'pageTitle'));
     }
+    
 
     public function show($id)
     {

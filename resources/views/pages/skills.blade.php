@@ -5,13 +5,13 @@
 <p class="section-subtitle">Here are some of the skills I've acquired and honed over time.</p>
 
 <div class="skills-container">
-    @foreach($skills->groupBy(fn($skill) => optional($skill->category->first())->name ?? 'Other') as $category => $skillGroup)
+    @foreach($categories as $category)
         <div class="skills-section">
-            <h1>{{ $category }}</h1>
+            <h1>{{ $category->name }}</h1>
             <div class="skills-grid">
-                @foreach($skillGroup as $skill)
+                @foreach($category->skill as $skill)
                     <div>
-                        <img src="{{ asset('images/' . $skill->icon) }}" alt="{{ $skill->name }}">
+                        <img src="{{ asset($skill->icon) }}" alt="{{ $skill->name }}">
                         <p>{{ $skill->name }}</p>
                     </div>
                 @endforeach

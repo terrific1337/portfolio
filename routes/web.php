@@ -6,13 +6,13 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\JobController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\SkillController;
-use App\Http\Controllers\Auth\AboutMeController;
-use App\Http\Controllers\Auth\UserController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\AboutMeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 
 // Public routes
-Route::get('/', [PageController::class, 'show'])->defaults('page', 'home');
+Route::get('/', [PageController::class, 'show'])->defaults('page', 'home')->name('home');
 Route::post('/contact', [ContactController::class, 'submit'])->name('contact.submit');
 Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
 Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');

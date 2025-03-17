@@ -37,6 +37,6 @@ class RegisterController extends Controller
         // Log in user after registration
         Auth::login($user);
 
-        return redirect()->route('dashboard'); // or any route you want
+        return redirect()->route('home');
     }
 }

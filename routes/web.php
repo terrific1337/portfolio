@@ -17,6 +17,7 @@ Route::post('/contact', [ContactController::class, 'submit'])->name('contact.sub
 Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
 Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
 
 // Dashboard routes (auth required)
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
@@ -35,8 +36,6 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/aboutme', [AboutMeController::class, 'dashboardIndex'])->name('dashboard.aboutme');
     Route::get('/users', [UserController::class, 'dashboardIndex'])->name('dashboard.users');
 });
-
-
 
 // Auth routes
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

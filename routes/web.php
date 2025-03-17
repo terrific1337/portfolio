@@ -32,7 +32,6 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     })->name('dashboard');
 
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');
-    Route::get('/jobs', [JobController::class, 'dashboardIndex'])->name('dashboard.jobs');
     Route::get('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
     Route::get('/aboutme', [AboutMeController::class, 'dashboardIndex'])->name('dashboard.aboutme');
 
@@ -43,6 +42,11 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('dashboard.users.edit');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('dashboard.users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('dashboard.users.destroy');
+
+    // Manage Jobs
+    Route::get('/jobs', [JobController::class, 'dashboardIndex'])->name('dashboard.jobs');
+    Route::get('/jobs/create', [JobController::class, 'create'])->name('dashboard.jobs.create');
+    Route::post('/jobs', [JobController::class, 'store'])->name('dashboard.jobs.store');
 });
 
 // Auth routes

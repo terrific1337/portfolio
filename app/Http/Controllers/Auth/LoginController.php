@@ -26,14 +26,21 @@ class LoginController extends Controller
     
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+    
+            // Check level
+            if (Auth::user()->level === 5) {
+                return redirect()->intended('/dashboard');
+            } else {
+                return redirect('/')
+                    ->withErrors(['email' => 'Unauthorized access. Only admins can log in.']);
+            }
         }
-
+    
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
-
+    
     // Logout the user
     public function logout(Request $request)
     {

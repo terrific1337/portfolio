@@ -53,6 +53,11 @@
                         Login
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('register') }}" class="{{ request()->routeIs('register') ? 'active' : '' }}">
+                        Register
+                    </a>
+                </li>
             @endif
         </div>
     </ul>

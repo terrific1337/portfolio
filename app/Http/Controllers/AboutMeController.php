@@ -20,7 +20,7 @@ class AboutMeController extends Controller
 
         return view('dashboard.about me.index', [
             'aboutmes' => $aboutmes,
-            'pageTitle' => 'Manage Jobs'
+            'pageTitle' => 'Manage About Me'
         ]);
     }
 }

@@ -29,10 +29,10 @@
                 <td>{{ $job->enddate }}</td>
                 <td>{{ $job->intern }}</td>
                 <td>
-                    <a href="{{ route('dashboard.users.edit', $job->id) }}" class="dashboard-edit-button">Edit</a>
+                    <a href="{{ route('dashboard.jobs.edit', $job->id) }}" class="dashboard-edit-button">Edit</a>
                 </td>
                 <td>
-                    <form action="{{ route('dashboard.users.destroy', $job->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?')">
+                    <form action="{{ route('dashboard.jobs.destroy', $job->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this job?')">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="dashboard-delete-button">Delete</button>

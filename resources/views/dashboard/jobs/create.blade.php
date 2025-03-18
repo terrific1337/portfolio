@@ -15,7 +15,7 @@
         </div>
     @endif
 
-    <form action="{{ route('dashboard.jobs.store') }}" method="POST" class="dashboard-form">
+    <form action="{{ route('dashboard.jobs.store') }}" method="POST" class="dashboard-form" enctype="multipart/form-data">
         @csrf
 
         <div class="dashboard-form-group">
@@ -72,7 +72,7 @@
         </div>
 
         <div class="dashboard-form-group">
-            <label for="jobdescription" class="dashboard-form-label">Job Description:</label>
+            <label for="jobdescription" class="dashboard-form-label">Experience:</label>
             <textarea id="jobdescription" name="jobdescription" class="dashboard-form-input">{{ old('jobdescription') }}</textarea>
         </div>
 
@@ -88,7 +88,7 @@
 
         <div class="dashboard-form-group">
             <label for="companylogo" class="dashboard-form-label">Company Logo Path:</label>
-            <input type="text" id="companylogo" name="companylogo" class="dashboard-form-input" value="{{ old('companylogo') }}">
+            <input type="file" id="companylogo" name="companylogo" class="dashboard-form-input" accept="image/*">
         </div>
 
         <button type="submit" class="dashboard-save-button">Save Job</button>

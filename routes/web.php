@@ -47,6 +47,9 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/jobs', [JobController::class, 'dashboardIndex'])->name('dashboard.jobs');
     Route::get('/jobs/create', [JobController::class, 'create'])->name('dashboard.jobs.create');
     Route::post('/jobs', [JobController::class, 'store'])->name('dashboard.jobs.store');
+    Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->name('dashboard.jobs.edit');
+    Route::put('/jobs/{job}', [JobController::class, 'update'])->name('dashboard.jobs.update');
+    Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->name('dashboard.jobs.destroy');
 });
 
 // Auth routes

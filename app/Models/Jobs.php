@@ -9,14 +9,18 @@ class Jobs extends Model
     protected $table = 'jobs';
     
     protected $fillable = [
-        'companyname', 
-        'companydescription', 
-        'startdate', 
-        'enddate', 
-        'location', 
-        'jobtitle', 
-        'status', 
-        'intern', 
-        'contactperson'
-    ]; 
+        'companyname',
+        'startdate',
+        'enddate',
+        'companydescription',
+        'location',
+        'jobtitle',
+        'status',
+        'intern',
+        'contactperson',
+        'jobdescription',
+        'companysector',
+        'companywebsite',
+        'companylogo',
+    ];
 }

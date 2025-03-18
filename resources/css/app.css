@@ -103,6 +103,7 @@ body {
     font-weight: bold;
     margin-bottom: 12px;
     color: #0074E4;
+    text-decoration: underline #6A0DAD 2px;
 }
 
 .footer-description {
@@ -395,7 +396,7 @@ h2 {
 .aboutme-container {
     display: flex;
     flex-direction: column;
-    margin: 0 15rem;;
+    margin: auto;
     width: 70%;
     background-color: #222222;
     padding: 20px;

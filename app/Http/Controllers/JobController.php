@@ -129,7 +129,6 @@ class JobController extends Controller
             if ($job->companylogo && Storage::disk('public')->exists(str_replace('storage/', '', $job->companylogo))) {
                 Storage::disk('public')->delete(str_replace('storage/', '', $job->companylogo));
             }
-            
     
             // Upload new logo
             $job->companylogo = 'storage/' . $request->file('companylogo')->store('images', 'public');
@@ -143,7 +142,14 @@ class JobController extends Controller
 
     public function destroy(Jobs $job)
     {
+        // Delete the stored logo file if it exists
+        if ($job->companylogo && Storage::disk('public')->exists(str_replace('storage/', '', $job->companylogo))) {
+            Storage::disk('public')->delete(str_replace('storage/', '', $job->companylogo));
+        }
+    
+        // Delete the job record
         $job->delete();
-        return redirect()->route('dashboard.jobs')->with('success', 'Job deleted succesfully!');
-    }
+    
+        return redirect()->route('dashboard.jobs')->with('success', 'Job deleted successfully!');
+    }    
 }

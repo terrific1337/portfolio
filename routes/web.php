@@ -33,7 +33,14 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');
     Route::get('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
+
+    // Manage About Me
     Route::get('/aboutme', [AboutMeController::class, 'dashboardIndex'])->name('dashboard.aboutme');
+    Route::get('/aboutme/create', [AboutMeController::class, 'create'])->name('dashboard.aboutme.create');
+    Route::post('aboutme', [AboutMeController::class, 'store'])->name('dashboard.aboutme.store');
+    Route::get('aboutme/{aboutme}/edit', [AboutMeController::class, 'edit'])->name('dashboard.aboutme.edit');
+    Route::put('aboutme/{aboutme}', [AboutMeController::class, 'update'])->name('dashboard.aboutme.update');
+    Route::delete('aboutme/{aboutme}', [AboutMeController::class,'destroy'])->name('dashboard.aboutme.destroy');
 
     // Manage Users
     Route::get('/users', [UserController::class, 'dashboardIndex'])->name('dashboard.users');

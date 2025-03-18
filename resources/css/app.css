@@ -1261,7 +1261,7 @@ h2 {
 }
 
 .dashboard-edit-button {
-    background-color: #0074E4; /* Primary Accent */
+    background-color: #bbb823;
     color: #ffffff;
     padding: 6px 12px;
     border-radius: 4px;
@@ -1272,7 +1272,7 @@ h2 {
 }
 
 .dashboard-edit-button:hover {
-    background-color: #005bbd;
+    background-color: #75740d;
     text-decoration: none;
 }
 
@@ -1382,4 +1382,42 @@ h2 {
     border-left: 4px solid #4CAF50;
     margin-bottom: 20px;
     border-radius: 6px;
+}
+
+.dashboard-flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.dashboard-half {
+    flex: 1 1 48%;
+    min-width: 300px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #0074E4;
+    color: #fff;
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 12px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.dashboard-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.dashboard-checkbox-item {
+    font-size: 14px;
+    color: #EAEAEA;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }

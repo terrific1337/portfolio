@@ -1,7 +1,7 @@
 @extends('dashboard.master')
 
 @section('dashboard_section')
-    <h1 class="dashboard-heading">Add New Skill</h1>
+    <h1 class="dashboard-heading">Add New Category</h1>
 
     <a href="{{ route('dashboard.skills') }}" class="dashboard-back-button">← Back to Skills Overview</a>
 
@@ -15,31 +15,27 @@
         </div>
     @endif
 
-    <form action="{{ route('dashboard.skills.store') }}" method="POST" class="dashboard-form" enctype="multipart/form-data">
+    <form action="{{ route('dashboard.skills.storeCategory') }}" method="POST" class="dashboard-form">
         @csrf
 
         <div class="dashboard-form-group">
-            <label for="name" class="dashboard-form-label">Skill Name:</label>
+            <label for="name" class="dashboard-form-label">Category Name:</label>
             <input type="text" id="name" name="name" class="dashboard-form-input" required>
         </div>
 
         <div class="dashboard-form-group">
-            <label for="icon" class="dashboard-form-label">Skill Icon (image upload):</label>
-            <input type="file" id="icon" name="icon" class="dashboard-form-input" accept="image/*">
-        </div>
-
-        <div class="dashboard-form-group">
-            <label class="dashboard-form-label">Attach to Categories:</label>
+            <label class="dashboard-form-label">Attach Existing Skills:</label>
             <div class="dashboard-checkbox-group">
-                @foreach($categories as $category)
+                @foreach($skills as $skill)
                     <label class="dashboard-checkbox-item">
-                    <input type="checkbox" name="categories[]" value="{{ $category->id }}">
-                        {{ $category->name }}
+                        <input type="checkbox" name="skills[]" value="{{ $skill->id }}">
+                        {{ $skill->name }}
                     </label>
                 @endforeach
             </div>
         </div>
+        
 
-        <button type="submit" class="dashboard-save-button">Save Skill</button>
+        <button type="submit" class="dashboard-save-button">Save Category</button>
     </form>
 @endsection

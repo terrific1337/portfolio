@@ -32,15 +32,27 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     })->name('dashboard');
 
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');
+    
+    // Manage Skills
     Route::get('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
+    Route::get('/skills/create', [SkillController::class, 'create'])->name('dashboard.skills.create');
+    Route::post('skills', [SkillController::class, 'store'])->name('dashboard.skills.store');
+    Route::get('/skills/{skill}/edit', [SkillController::class, 'edit'])->name('dashboard.skills.edit');
+    Route::put('/skills/{skill}', [SkillController::class, 'update'])->name('dashboard.skills.update');
+    Route::delete('/skills/{skill}', [SkillController::class, 'destroy'])->name('dashboard.skills.destroy');
+    Route::get('/skills/add-category', [SkillController::class, 'addCategory'])->name('dashboard.skills.addCategory');
+    Route::post('/skills/store-category', [SkillController::class, 'storeCategory'])->name('dashboard.skills.storeCategory');
+    Route::get('/skills/edit-category/{category}', [SkillController::class, 'editCategory'])->name('dashboard.skills.editCategory');
+    Route::put('/skills/update-category/{category}', [SkillController::class, 'updateCategory'])->name('dashboard.skills.updateCategory');    
+    Route::delete('/skills/delete-category/{category}', [SkillController::class, 'destroyCategory'])->name('dashboard.skills.destroyCategory');
 
     // Manage About Me
     Route::get('/aboutme', [AboutMeController::class, 'dashboardIndex'])->name('dashboard.aboutme');
     Route::get('/aboutme/create', [AboutMeController::class, 'create'])->name('dashboard.aboutme.create');
-    Route::post('aboutme', [AboutMeController::class, 'store'])->name('dashboard.aboutme.store');
-    Route::get('aboutme/{aboutme}/edit', [AboutMeController::class, 'edit'])->name('dashboard.aboutme.edit');
-    Route::put('aboutme/{aboutme}', [AboutMeController::class, 'update'])->name('dashboard.aboutme.update');
-    Route::delete('aboutme/{aboutme}', [AboutMeController::class,'destroy'])->name('dashboard.aboutme.destroy');
+    Route::post('/aboutme', [AboutMeController::class, 'store'])->name('dashboard.aboutme.store');
+    Route::get('/aboutme/{aboutme}/edit', [AboutMeController::class, 'edit'])->name('dashboard.aboutme.edit');
+    Route::put('/aboutme/{aboutme}', [AboutMeController::class, 'update'])->name('dashboard.aboutme.update');
+    Route::delete('/aboutme/{aboutme}', [AboutMeController::class,'destroy'])->name('dashboard.aboutme.destroy');
 
     // Manage Users
     Route::get('/users', [UserController::class, 'dashboardIndex'])->name('dashboard.users');

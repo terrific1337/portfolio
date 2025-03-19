@@ -21,8 +21,7 @@
 
         <div class="dashboard-form-group">
             <label for="name" class="dashboard-form-label">Skill Name:</label>
-            <input type="text" id="name" name="name" class="dashboard-form-input"
-                   value="{{ old('name', $skill->name) }}" required>
+            <input type="text" id="name" name="name" class="dashboard-form-input" value="{{ old('name', $skill->name) }}" required>
         </div>
 
         <div class="dashboard-form-group">

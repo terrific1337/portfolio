@@ -2,7 +2,7 @@
 
 @section('dashboard_section')
     <h1 class="dashboard-heading">Manage About Me</h1>
-
+    <h2 class="dashboard-subheading">Sections</h2>
     <a href="{{ route('dashboard.aboutme.create') }}" class="dashboard-add-button">+ Add Section</a>
     
     @if (session('success'))

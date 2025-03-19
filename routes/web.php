@@ -31,8 +31,19 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
         return view('dashboard.home', ['pageTitle' => 'Dashboard Home']);
     })->name('dashboard');
 
+    // Manage Projects
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');
-    
+    Route::get('/projects/create', [ProjectController::class, 'create'])->name('dashboard.projects.create');
+    Route::post('projects', [ProjectController::class, 'store'])->name('dashboard.projects.store');
+    Route::get('/projects/{projects}/edit', [ProjectController::class, 'edit'])->name('dashboard.projects.edit');
+    Route::put('/projects/{projects}', [ProjectController::class, 'update'])->name('dashboard.projects.update');
+    Route::delete('/projects/{projects}', [ProjectController::class, 'destroy'])->name('dashboard.projects.destroy');
+    Route::get('/projects/add-tag', [ProjectController::class, 'addTag'])->name('dashboard.projects.addTag');
+    Route::post('/projects/store-tag', [ProjectController::class, 'storeTag'])->name('dashboard.projects.storeTag');
+    Route::get('/projects/edit-tag/{tag}', [ProjectController::class, 'editTag'])->name('dashboard.projects.editTag');
+    Route::put('/projects/update-tag/{tag}', [ProjectController::class, 'updateTag'])->name('dashboard.projects.updateTag');    
+    Route::delete('/projects/delete-tag/{tag}', [ProjectController::class, 'destroyTag'])->name('dashboard.projects.destroyTag');
+
     // Manage Skills
     Route::get('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
     Route::get('/skills/create', [SkillController::class, 'create'])->name('dashboard.skills.create');

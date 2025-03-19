@@ -112,7 +112,6 @@ class SkillController extends Controller
         return redirect()->route('dashboard.skills')->with('success', 'Skill updated successfully!');
     }
 
-
     public function destroy(Skill $skill)
     {
         if ($skill->icon && Storage::disk('public')->exists(str_replace('storage/', '', $skill->icon))) {

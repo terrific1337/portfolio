@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
 {
+    public $timestamps = false;
     protected $fillable = [
         'name',
         'description',
@@ -21,6 +22,6 @@ class Project extends Model
 
     public function tags()
     {
-        return $this->belongsToMany(Tag::class);
+        return $this->belongsToMany(Tag::class, 'project_tag');
     }
 }

@@ -1421,3 +1421,13 @@ h2 {
     align-items: center;
     gap: 6px;
 }
+
+.dashboard-subheading {
+    font-size: 1.25rem; /* slightly smaller than the main heading */
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: #ccc; /* or #999 / #aaa depending on your theme */
+    border-bottom: 1px solid #444;
+    padding-bottom: 4px;
+}

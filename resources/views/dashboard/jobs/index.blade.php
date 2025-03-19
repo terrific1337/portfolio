@@ -2,7 +2,7 @@
 
 @section('dashboard_section')
     <h1 class="dashboard-heading">Manage Jobs</h1>
-
+    <h2 class="dashboard-subheading">Jobs</h2>
     <a href="{{ route('dashboard.jobs.create') }}" class="dashboard-add-button">+ Add Job</a>
     
     @if (session('success'))

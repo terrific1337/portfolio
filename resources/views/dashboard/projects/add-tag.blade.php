@@ -3,7 +3,7 @@
 @section('dashboard_section')
     <h1 class="dashboard-heading">Add New Tag</h1>
 
-    <a href="{{ route('dashboard.projects') }}">← Back to Projects Overview</a>
+    <a href="{{ route('dashboard.projects') }}" class="dashboard-back-button">← Back to Projects Overview</a>
 
     @if ($errors->any())
         <div class="dashboard-error-box">

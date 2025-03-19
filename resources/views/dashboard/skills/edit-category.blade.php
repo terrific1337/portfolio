@@ -21,8 +21,7 @@
 
         <div class="dashboard-form-group">
             <label for="name" class="dashboard-form-label">Category Name:</label>
-            <input type="text" id="name" name="name" class="dashboard-form-input"
-                   value="{{ old('name', $category->name) }}" required>
+            <input type="text" id="name" name="name" class="dashboard-form-input" value="{{ old('name', $category->name) }}" required>
         </div>
 
         <div class="dashboard-form-group">

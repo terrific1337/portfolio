@@ -62,6 +62,18 @@
                 <option value="work" {{ old('category') === 'active' ? 'selected' : '' }}>Work</option>
             </select>
         </div>
+
+        <div class="dashboard-form-group">
+            <label class="dashboard-form-label">Add Tags To Your Project:</label>
+            <div class="dashboard-checkbox-group">
+                @foreach($tags as $tag)
+                    <label class="dashboard-checkbox-item">
+                    <input type="checkbox" name="tags[]" value="{{ $tag->id }}">
+                        {{ $tag->name }}
+                    </label>
+                @endforeach
+            </div>
+        </div>
         
         <button type="submit" class="dashboard-save-button">Save Project</button>
     </form>

@@ -33,12 +33,15 @@ class ProjectController extends Controller
     public function create()
     {
         $projects = \App\Models\Project::all();
-
+        $tags = \App\Models\Tag::all();
+    
         return view('dashboard.projects.create', [
             'pageTitle' => 'Add New Project',
             'projects' => $projects,
+            'tags' => $tags,
         ]);
     }
+    
 
     public function store(Request $request)
     {
@@ -162,7 +165,7 @@ class ProjectController extends Controller
     public function editTag(\App\Models\Tag $tag)
     {
         $projects = \App\Models\Project::all();
-
+        
         return view('dashboard.projects.edit-tag' , [
             'pageTitle' => 'Edit Tag',
             'tag' => $tag,
@@ -175,7 +178,7 @@ class ProjectController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'projects' => 'array',
-            'projects' => 'exists:projects.id',
+            'projects.*' => 'exists:projects,id',
         ]);
 
         $tag->update([

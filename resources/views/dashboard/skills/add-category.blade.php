@@ -35,7 +35,6 @@
             </div>
         </div>
         
-
         <button type="submit" class="dashboard-save-button">Save Category</button>
     </form>
 @endsection

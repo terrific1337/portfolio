@@ -129,11 +129,11 @@ class ProjectController extends Controller
 
     public function addTag()
     {
-        $tags = \App\Models\Tag::all();
+        $projects = \App\Models\Project::all();
 
         return view('dashboard.projects.add-tag', [
             'pageTitle' => 'Add New Tag',
-            'tags' => $tags
+            'projects' => $projects
         ]);
     }
 
@@ -149,7 +149,7 @@ class ProjectController extends Controller
             'name' => $validated['name']
         ]);
         
-        $tag->project()->sync($validated['projects'] ?? []);
+        $tag->projects()->sync($validated['projects'] ?? []);
 
         return redirect()->route('dashboard.projects')->with('success', 'Tag created successfully');
     }
@@ -177,14 +177,14 @@ class ProjectController extends Controller
             'name' => $validated['name']
         ]);
 
-        $tag->project()->sync($validated['projects'] ?? []);
+        $tag->projects()->sync($validated['projects'] ?? []);
 
         return redirect()->route('dashboard.projects')->with('success', 'Tag updated successfully!');
     }
 
     public function destroyTag(\App\Models\Tag $tag)
     {
-        $tag->project()->detach();
+        $tag->projects()->detach();
         $tag->delete();
 
         return redirect()->route('dashboard.projects')->with('success', 'Tag deleted successfully!');

@@ -48,7 +48,7 @@ class ProjectController extends Controller
             'repo' => 'nullable|string|max:255',
             'screenshot' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'demo' => 'nullable|string|max:255',
-            'status' => 'required|in:active,inactive,completed',
+            'status' => 'required|in:planned,in-progress,completed',
             'category' => 'required|in:personal,school,work',
             'tags' => 'array',
             'tags' => 'exists:tags,id',
@@ -62,12 +62,17 @@ class ProjectController extends Controller
 
         $project = Project::create([
             'name' => $validated['name'],
+            'description' => $validated['description'] ?? null,
+            'repo' => $validated['repo'] ?? null,
+            'demo' => $validated['demo'] ?? null,
             'screenshot' => $screenshotPath,
-        ]);
+            'status' => $validated['status'],
+            'category' => $validated['category'],
+        ]);        
 
-        $project->tag()->sync($validated['tags'] ?? []);
+        $project->tags()->sync($validated['tags'] ?? []);
 
-        return redirect()->route('dashboard.projects')->with('success', 'Porject created successfully!');
+        return redirect()->route('dashboard.projects')->with('success', 'Project created successfully!');
     }
 
     public function edit(Project $project)
@@ -89,7 +94,7 @@ class ProjectController extends Controller
             'repo' => 'nullable|string|max:255',
             'screenshot' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'demo' => 'nullable|string|max:255',
-            'status' => 'required|in:active,inactive,completed',
+            'status' => 'required|in:planned,in-progress,completed',
             'category' => 'required|in:personal,school,work',
             'tags' => 'array',
             'tags' => 'exists:tags,id',
@@ -110,7 +115,7 @@ class ProjectController extends Controller
             'screenshot' => $screenshotPath,
         ]);
         
-        $project->tag()->sync($validated['tags'] ?? []);
+        $project->tags()->sync($validated['tags'] ?? []);
         
         return redirect()->route('dashboard.projects')->with('success', 'Project updated successfully!');
     }
@@ -121,7 +126,7 @@ class ProjectController extends Controller
             Storage::disk('public')->delete(str_replace('storage/', '', $project->screenshot));
         }
         
-        $project->tag()->detach();
+        $project->tags()->detach();
         $project->delete();
 
         return redirect()->route('dashboard.projects')->with('success', 'Project deleted successfully!');

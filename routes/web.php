@@ -35,9 +35,9 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');
     Route::get('/projects/create', [ProjectController::class, 'create'])->name('dashboard.projects.create');
     Route::post('projects', [ProjectController::class, 'store'])->name('dashboard.projects.store');
-    Route::get('/projects/{projects}/edit', [ProjectController::class, 'edit'])->name('dashboard.projects.edit');
-    Route::put('/projects/{projects}', [ProjectController::class, 'update'])->name('dashboard.projects.update');
-    Route::delete('/projects/{projects}', [ProjectController::class, 'destroy'])->name('dashboard.projects.destroy');
+    Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('dashboard.projects.edit');
+    Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('dashboard.projects.update');
+    Route::delete('/projects/{project}', [ProjectController::class, 'destroy'])->name('dashboard.projects.destroy');
     Route::get('/projects/add-tag', [ProjectController::class, 'addTag'])->name('dashboard.projects.addTag');
     Route::post('/projects/store-tag', [ProjectController::class, 'storeTag'])->name('dashboard.projects.storeTag');
     Route::get('/projects/edit-tag/{tag}', [ProjectController::class, 'editTag'])->name('dashboard.projects.editTag');

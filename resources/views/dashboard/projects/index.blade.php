@@ -12,7 +12,7 @@
     <div class="dashboard-flex-grid">
         <div class="dashboard-half">
             <h2 class="dashboard-subheading">Projects</h2>
-            <a href="{{ route('dashboard.projects.create') }}" class="dashboard-add-button">+ Add Skill</a>
+            <a href="{{ route('dashboard.projects.create') }}" class="dashboard-add-button">+ Add Project</a>
         
             <table class="dashboard-table">
                 <thead>

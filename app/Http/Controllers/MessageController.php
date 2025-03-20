@@ -6,9 +6,17 @@ use App\Models\Message;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use App\Mail\MessageReplyMail;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
+    public function __construct()
+    {
+        if (!Auth::check() || Auth::user()->level !== 5) {
+            abort(403, 'Unauthorized');
+        }
+    }
+    
     public function index(Request $request)
     {
         $showArchived = $request->query('archived', false);

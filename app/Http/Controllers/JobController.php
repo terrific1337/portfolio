@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Jobs;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class JobController extends Controller
 {
+    public function __construct()
+    {
+        if (!Auth::check() || Auth::user()->level !== 5) {
+            abort(403, 'Unauthorized');
+        }
+    }
+
     public function index()
     {
     $jobs = Jobs::all();

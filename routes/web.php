@@ -11,6 +11,7 @@ use App\Http\Controllers\AboutMeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\DashboardController;
 
 // Public routes
 Route::get('/', [PageController::class, 'show'])->defaults('page', 'home')->name('home');
@@ -24,13 +25,7 @@ Route::get('/about me', [AboutMeController::class, 'index'])->name('aboutme.inde
 // Dashboard routes (auth required)
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
-    Route::get('/', function () {
-        if (auth()->user()->level !== 5) {
-            abort(403, 'Unauthorized: You are not allowed to access the dashboard.');
-        }
-
-        return view('dashboard.home', ['pageTitle' => 'Dashboard Home']);
-    })->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     // Manage Messages
     Route::get('/messages', [MessageController::class, 'index'])->name('dashboard.messages');
@@ -42,27 +37,27 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     // Manage Projects
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');
     Route::get('/projects/create', [ProjectController::class, 'create'])->name('dashboard.projects.create');
-    Route::post('projects', [ProjectController::class, 'store'])->name('dashboard.projects.store');
+    Route::post('/projects', [ProjectController::class, 'store'])->name('dashboard.projects.store');
     Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('dashboard.projects.edit');
     Route::put('/projects/{project}', [ProjectController::class, 'update'])->name('dashboard.projects.update');
     Route::delete('/projects/{project}', [ProjectController::class, 'destroy'])->name('dashboard.projects.destroy');
     Route::get('/projects/add-tag', [ProjectController::class, 'addTag'])->name('dashboard.projects.addTag');
     Route::post('/projects/store-tag', [ProjectController::class, 'storeTag'])->name('dashboard.projects.storeTag');
     Route::get('/projects/edit-tag/{tag}', [ProjectController::class, 'editTag'])->name('dashboard.projects.editTag');
-    Route::put('/projects/update-tag/{tag}', [ProjectController::class, 'updateTag'])->name('dashboard.projects.updateTag');    
+    Route::put('/projects/update-tag/{tag}', [ProjectController::class, 'updateTag'])->name('dashboard.projects.updateTag');
     Route::delete('/projects/delete-tag/{tag}', [ProjectController::class, 'destroyTag'])->name('dashboard.projects.destroyTag');
 
     // Manage Skills
     Route::get('/skills', [SkillController::class, 'dashboardIndex'])->name('dashboard.skills');
     Route::get('/skills/create', [SkillController::class, 'create'])->name('dashboard.skills.create');
-    Route::post('skills', [SkillController::class, 'store'])->name('dashboard.skills.store');
+    Route::post('/skills', [SkillController::class, 'store'])->name('dashboard.skills.store');
     Route::get('/skills/{skill}/edit', [SkillController::class, 'edit'])->name('dashboard.skills.edit');
     Route::put('/skills/{skill}', [SkillController::class, 'update'])->name('dashboard.skills.update');
     Route::delete('/skills/{skill}', [SkillController::class, 'destroy'])->name('dashboard.skills.destroy');
     Route::get('/skills/add-category', [SkillController::class, 'addCategory'])->name('dashboard.skills.addCategory');
     Route::post('/skills/store-category', [SkillController::class, 'storeCategory'])->name('dashboard.skills.storeCategory');
     Route::get('/skills/edit-category/{category}', [SkillController::class, 'editCategory'])->name('dashboard.skills.editCategory');
-    Route::put('/skills/update-category/{category}', [SkillController::class, 'updateCategory'])->name('dashboard.skills.updateCategory');    
+    Route::put('/skills/update-category/{category}', [SkillController::class, 'updateCategory'])->name('dashboard.skills.updateCategory');
     Route::delete('/skills/delete-category/{category}', [SkillController::class, 'destroyCategory'])->name('dashboard.skills.destroyCategory');
 
     // Manage About Me
@@ -71,7 +66,7 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::post('/aboutme', [AboutMeController::class, 'store'])->name('dashboard.aboutme.store');
     Route::get('/aboutme/{aboutme}/edit', [AboutMeController::class, 'edit'])->name('dashboard.aboutme.edit');
     Route::put('/aboutme/{aboutme}', [AboutMeController::class, 'update'])->name('dashboard.aboutme.update');
-    Route::delete('/aboutme/{aboutme}', [AboutMeController::class,'destroy'])->name('dashboard.aboutme.destroy');
+    Route::delete('/aboutme/{aboutme}', [AboutMeController::class, 'destroy'])->name('dashboard.aboutme.destroy');
 
     // Manage Users
     Route::get('/users', [UserController::class, 'dashboardIndex'])->name('dashboard.users');
@@ -97,5 +92,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/register', [RegisterController::class, 'show'])->name('register');
 Route::post('/register', [RegisterController::class, 'register'])->name('register.submit');
 
-// Dynamic page fallback (e.g., /about, /contact etc.)
+// Dynamic page fallback
 Route::get('/{page}', [PageController::class, 'show'])->name('page.show');

@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class SkillController extends Controller
 {
+    public function __construct()
+    {
+        if (!Auth::check() || Auth::user()->level !== 5) {
+            abort(403, 'Unauthorized');
+        }
+    }
+
     public function index()
     {
         $categories = \App\Models\Category::with('skill')->get();

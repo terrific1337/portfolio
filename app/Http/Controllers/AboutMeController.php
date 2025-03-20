@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\AboutMe;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class AboutMeController extends Controller
 {
+    public function __construct()
+    {
+        if (!Auth::check() || Auth::user()->level !== 5) {
+            abort(403, 'Unauthorized');
+        }
+    }
+
     public function  index()
     {
         $aboutmes = AboutMe::orderBy('id')->get();

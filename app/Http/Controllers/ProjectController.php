@@ -5,9 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
+    public function __construct()
+    {
+        if (!Auth::check() || Auth::user()->level !== 5) {
+            abort(403, 'Unauthorized');
+        }
+    }
+
     public function index()
     {
         // Public page - Load projects with their related tags, ordered by the 'order' column

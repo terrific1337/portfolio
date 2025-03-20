@@ -12,6 +12,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\TestimonialController;
 
 // Public routes
 Route::get('/', [PageController::class, 'show'])->defaults('page', 'home')->name('home');
@@ -21,6 +22,7 @@ Route::get('/jobs/{id}', [JobController::class, 'show'])->name('jobs.show');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
 Route::get('/about me', [AboutMeController::class, 'index'])->name('aboutme.index');
+Route::get('/testimonials', [TestimonialController::class, 'index'])->name('testimonials.index');
 
 // Dashboard routes (auth required)
 Route::middleware(['auth'])->prefix('dashboard')->group(function () {

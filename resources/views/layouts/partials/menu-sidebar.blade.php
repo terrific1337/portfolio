@@ -9,5 +9,6 @@
         <li><a href="{{ route('dashboard.skills') }}" class="{{ request()->routeIs('dashboard.skills') ? 'active' : '' }}">Skills</a></li>
         <li><a href="{{ route('dashboard.aboutme') }}" class="{{ request()->routeIs('dashboard.aboutme') ? 'active' : '' }}">About Me</a></li>
         <li><a href="{{ route('dashboard.users') }}" class="{{ request()->routeIs('dashboard.users') ? 'active' : '' }}">Users</a></li>
+        <li><a href="{{ route('dashboard.messages') }}" class="{{ request()->routeIs('dashboard.messages') ? 'active' : '' }}">Messages</a></li>
     </ul>
 </aside>

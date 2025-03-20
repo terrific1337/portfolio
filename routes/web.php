@@ -10,6 +10,7 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\AboutMeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\MessageController;
 
 // Public routes
 Route::get('/', [PageController::class, 'show'])->defaults('page', 'home')->name('home');
@@ -30,6 +31,13 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
 
         return view('dashboard.home', ['pageTitle' => 'Dashboard Home']);
     })->name('dashboard');
+
+    // Manage Messages
+    Route::get('/messages', [MessageController::class, 'index'])->name('dashboard.messages');
+    Route::get('/messages/{message}', [MessageController::class, 'show'])->name('dashboard.messages.show');
+    Route::post('/messages/{message}/reply', [MessageController::class, 'reply'])->name('dashboard.messages.reply');
+    Route::post('/messages/{message}/archive', [MessageController::class, 'archive'])->name('dashboard.messages.archive');
+    Route::post('/messages/{message}/mark-as-unread', [MessageController::class, 'markAsUnread'])->name('dashboard.messages.markAsUnread');
 
     // Manage Projects
     Route::get('/projects', [ProjectController::class, 'dashboardIndex'])->name('dashboard.projects');

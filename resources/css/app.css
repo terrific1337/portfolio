@@ -1431,3 +1431,211 @@ h2 {
     border-bottom: 1px solid #444;
     padding-bottom: 4px;
 }
+
+.btn-view {
+    padding: 6px 12px;
+    font-size: 14px;
+    border-radius: 6px;
+    background-color: #3490dc;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s ease;
+}
+
+.btn-view:hover {
+    background-color: #2779bd;
+}
+
+.message-detail-container {
+    padding: 24px;
+    background-color: #222222; /* Card Background */
+    border: 1px solid #6A0DAD; /* Inner Containers */
+    border-radius: 10px;
+    color: #EAEAEA; /* Text Color */
+}
+
+.message-title {
+    font-size: 22px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    color: #EAEAEA;
+}
+
+.message-meta p {
+    margin: 6px 0;
+    font-size: 14px;
+    color: #EAEAEA;
+}
+
+.message-body {
+    margin-top: 24px;
+}
+
+.message-content-box {
+    background-color: #121212; /* Dark Background */
+    border: 1px solid #252525; /* Inner Containers */
+    border-radius: 8px;
+    padding: 18px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #EAEAEA;
+    white-space: pre-wrap;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    background-color: #0074E4; /* Primary Accent */
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #005bbd; /* Slightly darker Primary Accent */
+}
+
+
+.status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.status-new {
+    background-color: #c62828;
+    color: #ffebee;
+    border: 1px solid #c62828;
+}
+
+.status-read {
+    background-color: #2e7d32;
+    color: #c8e6c9;
+    border: 1px solid #2e7d32;
+}
+
+.status-archived {
+    background-color: #37474f;
+    color: #cfd8dc;
+    border: 1px solid #37474f;
+}
+
+.reply-section {
+    margin-top: 40px;
+    background-color: #222222;
+    border: 1px solid #6A0DAD;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.reply-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #EAEAEA;
+}
+
+.reply-textarea {
+    width: 100%;
+    background-color: #121212;
+    border: 1px solid #252525;
+    color: #EAEAEA;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    resize: vertical;
+}
+
+.btn-reply {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #0074E4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-reply:hover {
+    background-color: #005bbd;
+}
+
+.success-msg {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.success-msg {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.btn-filter {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #6C757D;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-filter:hover {
+    background-color: #565e64;
+}
+
+.archived-row {
+    background-color: #1a1a1a;
+    color: #999;
+    font-style: italic;
+}
+
+.btn-archive {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: #6C757D;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-archive:hover {
+    background-color: #565e64;
+}
+
+.btn-unread {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    background-color: #FFC857; /* Warning Color */
+    color: #222;
+    border: none;
+    cursor: pointer;
+    margin-left: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-unread:hover {
+    background-color: #e6b347;
+}

@@ -11,6 +11,10 @@ class SkillController extends Controller
 {
     public function __construct()
     {
+        if (in_array(request()->route()->getActionMethod(), ['index'])) {
+            return;
+        }
+    
         if (!Auth::check() || Auth::user()->level !== 5) {
             abort(403, 'Unauthorized');
         }

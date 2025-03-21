@@ -10,7 +10,7 @@ class PageController extends Controller
     {
         $normalizedPage = strtolower(str_replace(['-', ' '], '', $page ?: 'home'));
         
-        $validPages = ['home', 'contact', 'aboutme', 'projects', 'jobs', 'skills', 'login'];
+        $validPages = ['home', 'contact', 'aboutme', 'projects', 'jobs', 'skills', 'testimonials', 'login'];
 
         if (!in_array($normalizedPage, $validPages)) {
             abort(404);
@@ -24,6 +24,7 @@ class PageController extends Controller
             'jobs' => 'Jobs',
             'skills' => 'Skills',
             'login' => 'Login',
+            'testimonials' => 'Testimonials',
         ];
 
         return view("pages.$normalizedPage", [

@@ -85,6 +85,14 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::get('/jobs/{job}/edit', [JobController::class, 'edit'])->name('dashboard.jobs.edit');
     Route::put('/jobs/{job}', [JobController::class, 'update'])->name('dashboard.jobs.update');
     Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->name('dashboard.jobs.destroy');
+
+    // Manage Testimonials
+    Route::get('/testimonials', [TestimonialController::class, 'dashboardIndex'])->name('dashboard.testimonials');
+    Route::get('/testimonials/create', [TestimonialController::class, 'create'])->name('dashboard.testimonials.create');
+    Route::post('/testimonials', [TestimonialControlleR::class, 'store'])->name('dashboard.testimonials.store');
+    Route::get('/testimonials/{testimonial}', [TestimonialController::class, 'edit'])->name('dashboard.testimonials.edit');
+    Route::put('/testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('dashboard.testimonials.update');
+    Route::delete('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('dashboard.testimonials.destroy');
 });
 
 // Auth routes

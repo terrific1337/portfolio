@@ -18,8 +18,9 @@ class MenuSeeder extends Seeder
             ['id' => 3, 'name' => 'Projects', 'level' => 0],
             ['id' => 4, 'name' => 'Skills', 'level' => 0],
             ['id' => 5, 'name' => 'Jobs', 'level' => 0],
-            ['id' => 6, 'name' => 'Contact', 'level' => 0],
-            ['id' => 98, 'name' => 'Dashboard', 'level' => 5]
+            ['id' => 6, 'name' => 'Testimonials', 'level' => 0],
+            ['id' => 7, 'name' => 'Contact', 'level' => 0],
+            ['id' => 98, 'name' => 'Dashboard', 'level' => 5],
         ]);
     }
 }

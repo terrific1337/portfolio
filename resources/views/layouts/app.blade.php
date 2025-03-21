@@ -66,9 +66,12 @@
     <script>
         const phrases = [
             "Software Developer",
+            "Fullstack Developer",
+            "Frontend Developer",
+            "Backend Developer",
             "Laravel Developer",
-            "Fullstack Builder",
-            "Frontend Enthusiast"
+            "Database Designer",
+            "UI Developer",
         ];
 
         const typingText = document.getElementById("typing-text");

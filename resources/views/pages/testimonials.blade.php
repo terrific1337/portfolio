@@ -3,6 +3,8 @@
 @section('content')
 @include('layouts.partials.header')
 
+<p class="section-subtitle">Don't just believe my word, here are others.</p>
+
 <div class="testimonial-container">
     <h1 class="testimonial-title">{{ $pageTitle }}</h1>
 
